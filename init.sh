@@ -36,7 +36,7 @@ mkdir $workspace
 #---------------------------------------------------------------------------
 git clone https://github.com/bonnaudc/bash_aliases.git $workspace/bash_aliases
 unlink ~/.bash_aliases
-ln -rs $worskpace/bash_aliases/.bash_aliases ~/
+ln -rs $workspace/bash_aliases/.bash_aliases ~/
 source ~/.bash_aliases
 
 #---------------------------------------------------------------------------
