@@ -47,7 +47,7 @@ unlink ~/.vimrc
 unlink ~/.vim
 ln -rs $workspace/vim_conf/.vimrc ~/
 ln -rs $workspace/vim_conf/.vim ~/
-
+git submodule foreach git pull origin master            # git submodules
 
 #---------------------------------------------------------------------------
 #   RECUP myApp
