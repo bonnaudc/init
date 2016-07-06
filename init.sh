@@ -29,7 +29,7 @@ git config --global core.editor "vim"                   #use vim as editor for c
 #---------------------------------------------------------------------------
 #   CREATION WORKSPACE  
 #---------------------------------------------------------------------------
-mkdir $workspace
+rm -rf $workspace && mkdir $workspace
 
 #---------------------------------------------------------------------------
 #   RECUP ALIASES
