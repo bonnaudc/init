@@ -49,7 +49,7 @@ ln -rs $workspace/vim_conf/.vim ~/
 #---------------------------------------------------------------------------
 #   RECUP myApp
 #---------------------------------------------------------------------------
-git clone https://github.com/bonnaudc/vim_conf.git $workspace/myApp
+git clone https://github.com/bonnaudc/myApp.git $workspace
 
 
 
