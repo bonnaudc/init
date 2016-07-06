@@ -1,7 +1,7 @@
 #---------------------------------------------------------------------------
 #   CONFIGURATION DU SCRIPT 
 #---------------------------------------------------------------------------
-workspace=$HOME/workspace2
+workspace=$HOME/workspace
 
 #---------------------------------------------------------------------------
 #  UPDATE APT
@@ -35,6 +35,7 @@ mkdir $workspace
 #   RECUP ALIASES
 #---------------------------------------------------------------------------
 git clone https://github.com/bonnaudc/bash_aliases.git $workspace
+unlink ~/.bash_aliases
 ln -rs $worskpace/bash_aliases/.bash_aliases ~/
 source ~/.bash_aliases
 
@@ -42,6 +43,8 @@ source ~/.bash_aliases
 #   RECUP CONFIG VIM
 #---------------------------------------------------------------------------
 git clone https://github.com/bonnaudc/vim_conf.git $workspace
+unlink ~/.vimrc
+unlink ~/.vim
 ln -rs $workspace/vim_conf/.vimrc ~/
 ln -rs $workspace/vim_conf/.vim ~/
 
@@ -50,7 +53,6 @@ ln -rs $workspace/vim_conf/.vim ~/
 #   RECUP myApp
 #---------------------------------------------------------------------------
 git clone https://github.com/bonnaudc/myApp.git $workspace
-
 
 
 
