@@ -76,7 +76,7 @@ curl https://install.meteor.com/ | sh
 myApp=$workspace/myApp
 printf "\nCloning myApp application into $myApp..."
 git clone https://github.com/bonnaudc/myApp.git $myApp
-printf '\nRunning meteor npm install...'
-cd $myApp && meteor npm install
+printf '\nRunning npm install...'
+cd $myApp && npm install
 printf '\nUpdating Meteor...'
 meteor update
