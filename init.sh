@@ -24,8 +24,10 @@ apt-get install -y \
     default-jre \
     git \
     wget \
-    curl
-#ln -s /usr/bin/nodejs /usr/bin/node
+    curl \
+    default-jre \
+    default-jdk
+
 #---------------------------------------------------------------------------
 #   CONFIG GIT
 #---------------------------------------------------------------------------
