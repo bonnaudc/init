@@ -42,11 +42,8 @@ rm -rf $workspace && mkdir $workspace
 #---------------------------------------------------------------------------
 printf '\nGetting vim configuration from Github...'
 git clone https://github.com/bonnaudc/bash_aliases.git $workspace/bash_aliases
-printf "\nAdding links to ~/.bash_aliases"
-unlink ~/.bash_aliases
-ln -rs $workspace/bash_aliases/.bash_aliases ~/
-printf "\nSourcing  ~/.bash_aliases"
-source ~/.bash_aliases
+printf "\nCopying ~/.bash_aliases"
+cp $workspace/bash_aliases/.bash_aliases ~/
 
 #---------------------------------------------------------------------------
 #   RECUP CONFIG VIM
