@@ -29,6 +29,9 @@ apt-get install -y \
     default-jdk \
     vim-nox \
     vim
+    
+printf '\nAdding link to /usr/bin/node...'
+ln -s /usr/bin/nodejs /usr/bin/node
 #---------------------------------------------------------------------------
 #   CONFIG GIT
 #---------------------------------------------------------------------------
