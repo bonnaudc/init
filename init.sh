@@ -3,7 +3,7 @@
 #---------------------------------------------------------------------------
 workspace=$HOME/workspace
 
-echo '\nStarting script with workspace : $workspace...'
+echo "\nStarting script with workspace : $workspace..."
 
 #---------------------------------------------------------------------------
 #  UPDATE APT
@@ -16,8 +16,6 @@ apt-get update
 #---------------------------------------------------------------------------
 echo '\nInstalling packages...'
 apt-get install -y \
-    nodejs \
-    npm \
     vim \
     git \
     wget \
@@ -34,7 +32,7 @@ git config --global core.editor "vim"                   #use vim as editor for c
 #---------------------------------------------------------------------------
 #   CREATION WORKSPACE  
 #---------------------------------------------------------------------------
-echo '\nCreating $workspace ...'
+echo "\nCreating $workspace ..."
 rm -rf $workspace && mkdir $workspace
 
 #---------------------------------------------------------------------------
@@ -42,8 +40,10 @@ rm -rf $workspace && mkdir $workspace
 #---------------------------------------------------------------------------
 echo '\nGetting vim configuration from Github...'
 git clone https://github.com/bonnaudc/bash_aliases.git $workspace/bash_aliases
+echo "\nAdding links to ~/.bash_aliases"
 unlink ~/.bash_aliases
 ln -rs $workspace/bash_aliases/.bash_aliases ~/
+echo "\Sourcing  ~/.bash_aliases"
 source ~/.bash_aliases
 
 #---------------------------------------------------------------------------
@@ -51,10 +51,12 @@ source ~/.bash_aliases
 #---------------------------------------------------------------------------
 echo '\nGetting vim configuration from Github...'
 git clone https://github.com/bonnaudc/vim_conf.git $workspace/vim_conf
+echo "\nAdding links to ~/.vimrc and ~/.vim..."
 unlink ~/.vimrc
 unlink ~/.vim
 ln -rs $workspace/vim_conf/.vimrc ~/
 ln -rs $workspace/vim_conf/.vim ~/
+echo "\nRunning git submodule init & update..."
 git -C $workspace/vim_conf submodule init                   # git init submodules
 git -C $workspace/vim_conf submodule update                   # git init submodules
 
@@ -68,7 +70,7 @@ curl https://install.meteor.com/ | sh
 #   RECUP myApp
 #---------------------------------------------------------------------------
 myApp=$workspace/myApp
-echo '\nCloning myApp application into $myApp...'
+echo "\nCloning myApp application into $myApp..."
 git clone https://github.com/bonnaudc/myApp.git $myApp
 echo '\nRunning meteor npm install...'
 cd $myApp && meteor npm install
