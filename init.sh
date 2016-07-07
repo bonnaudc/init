@@ -18,11 +18,14 @@ apt-get update
 #---------------------------------------------------------------------------
 printf '\nInstalling packages...'
 apt-get install -y \
-    vim \
+    nodejs \
+    npm \
+    default-jdk \
+    default-jre \
     git \
     wget \
     curl
-
+#ln -s /usr/bin/nodejs /usr/bin/node
 #---------------------------------------------------------------------------
 #   CONFIG GIT
 #---------------------------------------------------------------------------
