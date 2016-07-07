@@ -59,20 +59,18 @@ git -C $workspace/vim_conf submodule init                   # git init submodule
 git -C $workspace/vim_conf submodule update                   # git init submodules
 
 #---------------------------------------------------------------------------
+#   INSTALL METEOR
+#---------------------------------------------------------------------------
+echo '\nInstalling Meteor...'
+curl https://install.meteor.com/ | sh
+
+#---------------------------------------------------------------------------
 #   RECUP myApp
 #---------------------------------------------------------------------------
-echo '\nGetting myApp application...'
-git clone https://github.com/bonnaudc/myApp.git $workspace/myApp
-
-
-
-#curl https://install.meteor.com/ | sh
-
-
-#meteor update
-#mkdir /workspace && cd /workspace
-#meteor create myApp && cd myApp
-#rm client/main.*
-#mkdir -p client/lib/semantic-ui/
-#meteor  npm install react react-dom react-router material-ui
-#meteor add  meteor:mocha mdg:validated-method dburles:factory dburles:factory aldeed:collection2 mongo practicalmeteor:chai
+myApp=$workspace/myApp
+echo '\nCloning myApp application into $myApp...'
+git clone https://github.com/bonnaudc/myApp.git $myApp
+echo '\nRunning meteor npm install...'
+cd $myApp && meteor npm install
+echo '\nUpdating Meteor...'
+meteor update
