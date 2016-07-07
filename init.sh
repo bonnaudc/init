@@ -45,7 +45,7 @@ git clone https://github.com/bonnaudc/bash_aliases.git $workspace/bash_aliases
 echo "\nAdding links to ~/.bash_aliases"
 unlink ~/.bash_aliases
 ln -rs $workspace/bash_aliases/.bash_aliases ~/
-echo "\Sourcing  ~/.bash_aliases"
+echo "\nSourcing  ~/.bash_aliases"
 source ~/.bash_aliases
 
 #---------------------------------------------------------------------------
