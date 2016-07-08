@@ -36,8 +36,6 @@ ln -s /usr/bin/nodejs /usr/bin/node
 #   CONFIG GIT
 #---------------------------------------------------------------------------
 printf '\nSetting git configuration...'
-git config --global user.name "bonnaudc"                #set vim user name
-git config --global user.email "bonnaudc@gmail.com"     #set vim user email
 git config --global core.editor "vim"                   #use vim as editor for commit messages
 
 #---------------------------------------------------------------------------
@@ -50,7 +48,7 @@ rm -rf $workspace && mkdir $workspace
 #   RECUP ALIASES
 #---------------------------------------------------------------------------
 printf '\nGetting vim configuration from Github...'
-git clone https://github.com/bonnaudc/bash_aliases.git $workspace/bash_aliases
+git clone https://github.com/cyrillebonnaud/bash_aliases.git $workspace/bash_aliases
 printf "\nCopying ~/.bash_aliases"
 cp $workspace/bash_aliases/.bash_aliases ~/
 
@@ -58,7 +56,7 @@ cp $workspace/bash_aliases/.bash_aliases ~/
 #   RECUP CONFIG VIM
 #---------------------------------------------------------------------------
 printf '\nGetting vim configuration from Github...'
-git clone https://github.com/bonnaudc/vim_conf.git $workspace/vim_conf
+git clone https://github.com/cyrillebonnaud/vim_conf.git $workspace/vim_conf
 printf "\nAdding links to ~/.vimrc and ~/.vim..."
 unlink ~/.vimrc
 unlink ~/.vim
@@ -79,7 +77,7 @@ curl https://install.meteor.com/ | sh
 #---------------------------------------------------------------------------
 myApp=$workspace/myApp
 printf "\nCloning myApp application into $myApp..."
-git clone https://github.com/bonnaudc/myApp.git $myApp
+git clone https://github.com/cyrillebonnaud/myApp.git $myApp
 printf '\nRunning npm install...'
 cd $myApp && npm install
 printf '\nUpdating Meteor...'
